@@ -1,5 +1,8 @@
 package com.r2dbc.movie.stream.exception;
 
+import lombok.Getter;
+
+@Getter
 public class BusinessException extends RuntimeException implements GeneralException {
     private String context;
     private String code;
@@ -13,14 +16,6 @@ public class BusinessException extends RuntimeException implements GeneralExcept
         super(message);
         this.context = context;
         this.code = code;
-    }
-
-    public String getContext() {
-        return this.context;
-    }
-
-    public String getCode() {
-        return this.code;
     }
 
     public BusinessException() {
